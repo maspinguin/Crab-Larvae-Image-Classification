@@ -1,0 +1,7 @@
+{
+  "name": "@larva/ui",
+  "description": "ui browser for larva",
+  "author": "bangkit ilham maulana",
+  "version": "1.0.0",
+  "private": true
+}

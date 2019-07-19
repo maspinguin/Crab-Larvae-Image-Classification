@@ -1,0 +1,31 @@
+{
+  "name": "crablarvae",
+  "version": "1.0.0",
+  "description": "Crab Larvae Phase Detection",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maspinguin/Crab-Larvae-Image-Classification.git"
+  },
+  "scripts": {
+    "lerna:publish-package-local": "lerna publish from-package",
+    "lerna:bootstrap": "lerna bootstrap"
+  },
+  "keywords": [
+    "Crab",
+    "Larvae",
+    "Image",
+    "Processing"
+  ],
+  "author": "bangkit ilham maulana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maspinguin/Crab-Larvae-Image-Classification/issues"
+  },
+  "homepage": "https://github.com/maspinguin/Crab-Larvae-Image-Classification#readme",
+  "devDependencies": {
+    "lerna": "^3.10.6",
+    "syncpack": "^4.5.3",
+    "yargs": "13.2.4"
+  }
+}
