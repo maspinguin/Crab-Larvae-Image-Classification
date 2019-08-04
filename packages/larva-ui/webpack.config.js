@@ -12,21 +12,28 @@ let mode = 'development';
 
 module.exports = [{
     mode: mode,
+    target: 'electron-renderer',
     devServer: {
         allowedHosts: [
-            'larvae.local'
+            'larvae.local',
+            'localhost'
         ],
+        hot: true,
         historyApiFallback: true,
     },
     context: path.join(__dirname),
     entry: {
         'larvae-ui': [
-            './src/larvae-ui.js',
+            './src/larvae-ui.js'
         ],
         style: [
             './scss/index.scss',
         ]
     },
+    // node: {
+    //     fs: 'empty',
+    //     child_process: 'empty'
+    // },
     output: {
         path: path.join(__dirname, 'dist', packageVersion),
         publicPath: '/',
@@ -104,7 +111,22 @@ module.exports = [{
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(png|jpg|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                }]
+            },
+            {
+                test: /\.node$/,
+                use: 'node-loader'
             }
+
         ]
     },
 }];

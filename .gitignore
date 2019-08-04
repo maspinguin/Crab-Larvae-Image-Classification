@@ -2,3 +2,8 @@ node_modules/
 .idea/
 lib/
 dist/
+package-lock.json
+yarn.lock
+.DS_store
+schema.graphql
+schema.json

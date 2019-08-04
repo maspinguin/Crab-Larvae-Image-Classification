@@ -1,0 +1,13 @@
+{
+  "name": "@larva/electron",
+  "description": "electron file setup to run",
+  "author": "bangkit ilham maulana",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "electron ./main/main.js"
+  },
+  "dependencies": {
+    "electron": "^1.8.4"
+  }
+}
