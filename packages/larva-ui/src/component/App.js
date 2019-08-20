@@ -23,16 +23,21 @@ export default class App  extends React.Component{
     }
 
     componentDidMount() {
-        //console.log(path.resolve('assets', 'got.jpg'));
-        //src.convertTo(dst, cv.CV_8U, scale, shift);
-        //let img = cv.imread('../../assets/got.jpg');
-        //this.renderImage(img)
+        console.log(window.location)
+        try {
+            const mat = cv.imread('./got.jpg');
+        } catch (e) {
+            console.log(e);
+        }
+
+
     }
 
     render() {
         return(
             <div style={{position: 'fixed', left: '50%'}}>
                 Hello app
+                <canvas id={'inputImage'}></canvas>
             </div>
         )
     }

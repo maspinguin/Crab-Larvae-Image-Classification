@@ -14,8 +14,8 @@ module.exports = [{
     mode: mode,
     target: 'electron-renderer',
     devServer: {
+        disableHostCheck: true,
         allowedHosts: [
-            'larvae.local',
             'localhost'
         ],
         hot: true,
