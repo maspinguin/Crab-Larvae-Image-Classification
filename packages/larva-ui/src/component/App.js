@@ -2,10 +2,6 @@ import React from 'react';
 
 const cv = require('opencv4nodejs');
 const path = require('path');
-import image from '../../../larva-electron/image/got.jpg';
-
-import logo from '../../image/logo_v.png';
-import image2 from '../../image/got.bmp';
 export default class App  extends React.Component{
     constructor(props) {
         super(props);
@@ -54,9 +50,6 @@ export default class App  extends React.Component{
         return(
             <div style={{position: 'fixed', left: '50%'}}>
                 Hello app
-                <img src={image2}/>
-                <br/>
-                123
                 <br/>
                 <canvas ref="canvas" width={300} height={300}></canvas>
                 {/*<canvas id={image2}></canvas>*/}
