@@ -46,12 +46,9 @@ module.exports = [{
         new MiniCssExtractPlugin({
             filename: 'larvae-ui.css',
         }),
-        // new CopyPlugin([
-        //     { from: 'scss/custom.min.css', to: `custom.min.css` },
-        //     { from: 'scss/vendors.min.css', to: `vendors.min.css` },
-        //     { from: 'image/logo_h_white.png', to: `image/logo_h_white.png` },
-        //     { from: 'fonts/', to: `fonts/` },
-        // ]),
+        new CopyPlugin([
+            { from: 'image/', to: `image/` },
+        ]),
         // new webpack.DefinePlugin({
         //     'process.env': JSON.stringify(dotenv.parsed)
         // })
@@ -100,28 +97,28 @@ module.exports = [{
                     }
                 ]
             }, {
-                test: /\.(jpe?g|png|gif|mp3|svg)$/i,
+                test: /\.(jpe?g|bmp|png|gif|mp3|svg)$/i,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
                             name: '[path][name].[ext]',
-                            publicPath: `/larva-ui/${packageVersion}/`, //Use relative path to allow SCSS to load images from any folder
+                            publicPath: `/`, //Use relative path to allow SCSS to load images from any folder
                             emitFile: true
                         }
                     }
                 ]
             },
-            {
-                test: /\.(png|jpg|gif)$/i,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192
-                        }
-                }]
-            },
+            // {
+            //     test: /\.(png|jpg|gif)$/i,
+            //     use: [
+            //         {
+            //             loader: 'url-loader',
+            //             options: {
+            //                 limit: 8192
+            //             }
+            //     }]
+            // },
             {
                 test: /\.node$/,
                 use: 'node-loader'
