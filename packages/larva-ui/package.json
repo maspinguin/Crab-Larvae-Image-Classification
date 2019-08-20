@@ -9,6 +9,7 @@
 		"build:relay": "relay-compiler --src ./src/ --schema ../larva-gql-server/src/graphql/schema.graphql",
 		"build": "webpack -p",
 		"electron-rebuild": "electron-rebuild -w opencv4nodejs",
+		"electron-start": "electron ../larva-electron/main/main.js",
 		"start": "webpack-dev-server"
 	},
 	"dependencies": {
