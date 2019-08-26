@@ -7,8 +7,13 @@ const dotenv = require('dotenv').config();
 
 const packageVersion = require('./package.json').version;
 
-let publicPath = `/dist/${packageVersion}`;
+let publicPath = '';
 let mode = 'development';
+if(process.env.NODE_ENV == "development" || process.env.NODE_ENV == "local") {
+    publicPath = '/';
+} else if(process.env.NODE_ENV == "production") {
+    publicPath = "./";
+}
 
 module.exports = [{
     mode: mode,
@@ -36,7 +41,7 @@ module.exports = [{
     // },
     output: {
         path: path.join(__dirname, 'dist', packageVersion),
-        publicPath: './',
+        publicPath: publicPath,
         filename: '[name].js',
     },
     plugins: [

@@ -14,9 +14,8 @@ function createWindow() {
         height: 800,
         width: 1200,
     })
-    let mode = process.env;
-
-    if(mode == "development") {
+    let mode = process.env.NODE_ENV;
+    if(mode == "development" || mode =="local") {
         const protocol = 'http:';
         const pathname = 'localhost:9094';
         mainWindow.loadURL(url.format({
@@ -25,9 +24,7 @@ function createWindow() {
             slashes: true,
         }));
     } else {
-        const winURL = process.env.NODE_ENV === 'development'
-            ? `http://localhost:9080`
-            : `file://${path.join(__dirname,`../../larva-ui/dist/${packageVersion}/`, 'index.html')}`
+        const winURL = `file://${path.join(__dirname,`../../larva-ui/dist/${packageVersion}/`, 'index.html')}`;
         mainWindow.loadURL(winURL);
     }
 

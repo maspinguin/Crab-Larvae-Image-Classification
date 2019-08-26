@@ -7,7 +7,7 @@
 	"scripts": {
 		"start:hot": "cross-env NODE_ENV=local webpack-dev-server --hot --port 9094",
 		"build:relay": "relay-compiler --src ./src/ --schema ../larva-gql-server/src/graphql/schema.graphql",
-		"build": "webpack -p",
+		"build": "NODE_ENV=production webpack -p",
 		"electron-rebuild": "electron-rebuild -w opencv4nodejs",
 		"electron-start": "electron ../larva-electron/main/main.js",
 		"start": "webpack-dev-server",
