@@ -3,7 +3,7 @@ import React from 'react';
 import {graphql, QueryRenderer} from 'react-relay';
 import RelayService from '../services/RelayService';
 import App from './App';
-
+import App2 from './App2';
 export default class AppLoader extends React.Component{
     render() {
         return(
@@ -13,7 +13,9 @@ export default class AppLoader extends React.Component{
                     if(err) {
                         return <div>Error:</div>;
                     } else if(props) {
-                        return <App viewer={props.viewer}/>
+                        console.log(props);
+                        // return <App viewer={props.viewer}/>
+                        return <App />
                     }
                     return <div>Loading...</div>
                 }}
