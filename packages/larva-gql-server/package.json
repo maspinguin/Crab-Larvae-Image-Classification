@@ -10,7 +10,7 @@
     "update-schema": "babel-node ./script/updateSchema.js"
   },
   "dependencies": {
-    "apollo-server-express": "^2.7.0",
+    "apollo-server-express": "^2.14.2",
     "body-parser": "^1.19.0",
     "config": "^3.1.0",
     "connect-redis": "3.4.0",
